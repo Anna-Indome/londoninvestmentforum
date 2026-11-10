@@ -1,0 +1,15 @@
+/* Форма регистрации и служебные стили (остальная вёрстка — inline из макета) */
+.f-field{display:flex;flex-direction:column;gap:6px}
+.f-field label{font-size:12px;color:#9F9F9F}
+.f-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.f-field input,.f-field select,.f-field textarea{box-sizing:border-box;padding:0 14px;height:46px;border:1px solid rgba(255,255,255,0.2);border-radius:4px;background:#231F1D;font-family:inherit;font-size:14px;color:#FFFFFF}
+.f-field textarea{height:auto;padding:12px 14px;resize:vertical}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{outline:none;border-color:#DBA15D}
+.f-field .is-bad,.f-check .is-bad{border-color:#E8705F !important;outline:1px solid #E8705F}
+.f-check{display:flex;align-items:center;gap:12px;font-size:14px;color:#D0D0D0;cursor:pointer}
+.f-check input{width:18px;height:18px;accent-color:#DBA15D;flex-shrink:0;margin:0}
+.f-small{align-items:flex-start;font-size:13px;line-height:1.5;color:#9F9F9F}
+.f-small input{margin-top:1px}
+.f-small a{color:#DBA15D;text-decoration:underline}
+#reg-submit[disabled]{opacity:.6;cursor:wait}
+[hidden]{display:none !important}

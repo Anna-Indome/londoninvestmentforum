@@ -1,0 +1,32 @@
+    <form id="reg-form" novalidate style="grid-column: 7 / span 6; box-sizing: border-box; padding: 40px; background: #191615; border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; display: flex; flex-direction: column; gap: 18px;">
+      <h3 style="margin: 0; font-size: 22px; font-weight: 700; color: {{accent}};">Регистрация на форум</h3>
+      <p id="reg-hint" style="margin: 0 0 6px; font-size: 13px; line-height: 1.5; color: #9F9F9F;">Заявки рассматривают организаторы форума. Поля со звёздочкой обязательны.</p>
+      <div class="f-field"><label for="f-ticket">Тип билета *</label><select id="f-ticket" name="ticket" required><option value="guest">Гость</option><option value="vip">VIP гость</option><option value="investor">Инвестор</option><option value="sponsor">Спонсор</option></select></div>
+      <div class="f-row">
+        <div class="f-field"><label for="f-name">Имя и фамилия *</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Анна Иванова" required></div>
+        <div class="f-field"><label for="f-company">Компания и роль *</label><input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Фонд, основатель" required></div>
+      </div>
+      <div class="f-row">
+        <div class="f-field"><label for="f-email">Электронная почта *</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+        <div class="f-field"><label for="f-phone">Телефон или мессенджер *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 … или @username" required></div>
+      </div>
+      <div class="f-field"><label for="f-link" id="f-link-label">LinkedIn или сайт *</label><input id="f-link" name="link" type="text" placeholder="linkedin.com/in/…" required></div>
+      <div class="f-field" data-show="not-sponsor"><label for="f-role">Кто вы на форуме *</label><select id="f-role" name="role"><option>Предприниматель</option><option>Частный инвестор</option><option>Венчурный фонд / бизнес-ангел / семейный офис</option><option>Фаундер, ищу инвестиции</option><option>Топ-менеджер</option><option>Финансы / профессиональные услуги</option><option>Другое</option></select></div>
+      <div class="f-field" data-show="role-other" hidden><label for="f-roleother">Уточните *</label><input id="f-roleother" name="roleOther" type="text" placeholder="Кто вы"></div>
+      <div class="f-field"><label for="f-comment">Комментарий</label><textarea id="f-comment" name="comment" rows="3" placeholder="Вопросы, пожелания, что вы ищете на форуме"></textarea></div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <label class="f-check" data-show="dealroom"><input id="f-dealroom" name="dealroom" type="checkbox">Хочу подать проект в Deal Room как фаундер</label>
+        <label class="f-check" data-show="investor" hidden><input id="f-pitch" name="pitch" type="checkbox">Хочу участвовать в питч-сессиях как инвестор</label>
+        <label class="f-check"><input id="f-speaker" name="speaker" type="checkbox">Хочу участвовать как спикер</label>
+      </div>
+      <div class="f-field" data-show="speaker" hidden><label for="f-topic">Тема выступления *</label><input id="f-topic" name="topic" type="text" placeholder="О чём вы хотите рассказать"></div>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <label class="f-check f-small"><input id="f-marketing" name="marketing" type="checkbox"><span>Хочу получать новости о будущих мероприятиях InDome и форума</span></label>
+        <label class="f-check f-small"><input id="f-sponsorshare" name="sponsorShare" type="checkbox"><span>Согласен(на) передать имя, компанию и почту спонсорам форума</span></label>
+        <label class="f-check f-small"><input id="f-gdpr" name="gdpr" type="checkbox" required><span>Принимаю <a href="/terms" target="_blank">правила участия и возврата</a> и согласен(на) на обработку персональных данных по <a href="/privacy" target="_blank">политике конфиденциальности</a> (UK GDPR). *</span></label>
+      </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0;">
+      <p id="reg-error" role="alert" hidden style="margin: 0; font-size: 13px; line-height: 1.5; color: #E8705F;"></p>
+      <button id="reg-submit" type="submit" style="margin-top: 4px; height: 54px; border: none; border-radius: 100px; background: {{accent}}; color: #191615; font-family: 'Manrope', Arial, sans-serif; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; cursor: pointer;">Перейти к оплате</button>
+      <p id="reg-ok" role="status" hidden style="margin: 0; padding: 16px 18px; border: 1px solid rgba(219,161,93,0.5); border-radius: 4px; font-size: 14px; line-height: 1.55; color: #FFFFFF;"></p>
+    </form>
